@@ -14,12 +14,11 @@ app.use(morgan("dev"));
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"))
 }
-
+else {app.use(express.static('public'));}
 // setting up mongo db
 var mongoDB_uri = process.env.mongoDB_uri || "mongodb://drewmargielaa:Dedehood@#$8@ds163480.mlab.com:63480/heroku_437vz6xc";
 mongoose.connect(mongoDB_uri, {
