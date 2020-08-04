@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // setting up mongo db
-var mongoDB_uri = process.env.mongoDB_uri || "mongodb://drewmargielaa:Dedehood@#$8@ds015879.mlab.com:15879/heroku_rm8qwd8w";
+var mongoDB_uri = process.env.mongoDB_uri || "mongodb://drewmargielaa:Dedehood@#$8@ds163480.mlab.com:63480/heroku_437vz6xc";
 mongoose.connect(mongoDB_uri, {
     useNewUrlParser: true,
     useFindAndModify: false
