@@ -16,8 +16,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"))
+}
+
 // setting up mongo db
-var mongoDB_uri = process.env.mongoDB_uri || "mongodb://localhost/workout";
+var mongoDB_uri = process.env.mongoDB_uri || "mongodb://drewmargielaa:Dedehood@#$8@ds015879.mlab.com:15879/heroku_rm8qwd8w";
 mongoose.connect(mongoDB_uri, {
     useNewUrlParser: true,
     useFindAndModify: false
