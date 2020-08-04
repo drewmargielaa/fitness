@@ -20,8 +20,8 @@ if (process.env.NODE_ENV === "production") {
 }
 else {app.use(express.static('public'));}
 // setting up mongo db
-var mongoDB_uri = process.env.mongoDB_uri || "mongodb://drewmargielaa:Dedehood@#$8@ds163480.mlab.com:63480/heroku_437vz6xc";
-mongoose.connect(mongoDB_uri, {
+//var mongoDB_uri = process.env.MONGODB_URI || "mongodb://drewmargielaa:Dedehood@#$8@ds163480.mlab.com:63480/heroku_437vz6xc";
+mongoose.connect(process.env.MONGODB_URI || "mongodb://drew:drew123@ds163480.mlab.com:63480/heroku_437vz6xc", {
     useNewUrlParser: true,
     useFindAndModify: false
 })
